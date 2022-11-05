@@ -1,0 +1,327 @@
+import {sinForm1} from "/Anthropologie-Unit3/components/forms.js"
+import {sinForm2} from "/Anthropologie-Unit3/components/forms.js"
+import {cAform1} from "/Anthropologie-Unit3/components/forms.js"
+import {cAform2} from "/Anthropologie-Unit3/components/forms.js"
+import {cAform3} from "/Anthropologie-Unit3/components/forms.js"
+let acccoad=44225
+let curruser;
+
+
+
+let place=document.querySelector(".block")
+let distag=document.querySelector("#singMyAco")
+let userdata=JSON.parse(localStorage.getItem("userAuthCode")) || []
+let createdAccountData=JSON.parse(localStorage.getItem("createdAccounts")) || []
+swaping(userdata)
+function swaping(userdata){
+    if(userdata[0]==null){
+    distag.innerText="Signin/Signup"
+}
+else{
+    distag.innerText="My Account"
+    distag.addEventListener("click",myAccDetails)
+}
+}
+
+
+let userauthentcation=()=>{
+    if(userdata[0]==null){
+    document.querySelector(".block").style.display="revert"
+    place.innerHTML=sinForm1()
+    document.querySelector(".material-symbols-outlined").addEventListener("click",rettrnHome)
+        function rettrnHome(){
+            document.querySelector(".block").style.display="none"
+        }
+    // let useremail=document.querySelector(".sinForm1_email").value
+    // console.log(useremail)
+    document.querySelector(".fillupForm>button:nth-child(2)").style.background="#4b5666"
+    // document.querySelector(".fillupForm>button:nth-child(2)").style.hover="red"
+    document.querySelector(".fillupForm>button:nth-child(2)").addEventListener("mouseenter",()=>
+    document.querySelector(".fillupForm>button:nth-child(2)").style.background="white"
+    )
+    document.querySelector(".fillupForm>button:nth-child(2)").addEventListener("mouseleave",()=>
+    document.querySelector(".fillupForm>button:nth-child(2)").style.background="#4b5666"
+    )
+
+
+document.querySelector(".block>button:last-child").style.background="white"
+    // document.querySelector(".fillupForm>button:nth-child(2)").style.hover="red"
+    document.querySelector(".block>button:last-child").addEventListener("mouseenter",()=>
+    document.querySelector(".block>button:last-child").style.background="#4b5666"
+    )
+    document.querySelector(".block>button:last-child").addEventListener("mouseleave",()=>
+    document.querySelector(".block>button:last-child").style.background="white"
+    )
+
+
+    document.querySelector(".fillupForm>button:nth-child(3)").style.background="white"
+    // document.querySelector(".fillupForm>button:nth-child(2)").style.hover="red"
+    document.querySelector(".fillupForm>button:nth-child(3)").addEventListener("mouseenter",()=>
+    document.querySelector(".fillupForm>button:nth-child(3)").style.background="#4b5666"
+    )
+    document.querySelector(".fillupForm>button:nth-child(3)").addEventListener("mouseleave",()=>
+    document.querySelector(".fillupForm>button:nth-child(3)").style.background="white"
+    )
+
+
+
+
+
+   
+    
+
+    document.querySelector(".fillupForm>button:nth-child(2)").addEventListener("click",singInFunc_2)
+    function singInFunc_2(){
+    let useremail=document.querySelector(".sinForm1_email").value
+    place.innerHTML=sinForm2()
+    document.querySelector(".material-symbols-outlined").addEventListener("click",rettrnHome)
+    function rettrnHome(){
+        document.querySelector(".block").style.display="none"
+    }
+
+    document.querySelector(".fillupForm>button:nth-child(3)").style.background="#4b5666"
+    // document.querySelector(".fillupForm>button:nth-child(2)").style.hover="red"
+    document.querySelector(".fillupForm>button:nth-child(3)").addEventListener("mouseenter",()=>
+    document.querySelector(".fillupForm>button:nth-child(3)").style.background="white"
+    )
+    document.querySelector(".fillupForm>button:nth-child(3)").addEventListener("mouseleave",()=>
+    document.querySelector(".fillupForm>button:nth-child(3)").style.background="#4b5666"
+    )
+
+
+
+    document.querySelector(".fillupForm>button:nth-child(4)").style.background="white"
+    // document.querySelector(".fillupForm>button:nth-child(2)").style.hover="red"
+    document.querySelector(".fillupForm>button:nth-child(4)").addEventListener("mouseenter",()=>
+    document.querySelector(".fillupForm>button:nth-child(4)").style.background="#4b5666"
+    )
+    document.querySelector(".fillupForm>button:nth-child(4)").addEventListener("mouseleave",()=>
+    document.querySelector(".fillupForm>button:nth-child(4)").style.background="white"
+    )
+
+    document.querySelector(".fillupForm>button:nth-child(3)").addEventListener("click",singInFunc_end)
+    function singInFunc_end(){
+        let validUser=false
+        let atocoad=document.querySelector(".sinForm2_coad").value
+
+            if(atocoad==acccoad){
+            // console.log("ok")
+            createdAccountData.forEach((el)=>{
+                // console.log(el.email,useremail)
+                if(el.email==useremail){
+                    validUser=true
+                curruser=[]
+                curruser.push(el)
+                console.log(curruser)
+                localStorage.setItem("tempuser",JSON.stringify(curruser))
+
+                }
+                
+            })
+            if(validUser==true){
+                userdata.push("allow")
+                localStorage.setItem("userAuthCode",JSON.stringify(userdata))
+                swaping(userdata)
+                document.querySelector(".block").style.display="none"
+            }
+            else{
+                alert("plz creat an Account")
+                place.innerHTML=sinForm1()
+                document.querySelector(".material-symbols-outlined").addEventListener("click",rettrnHome)
+                function rettrnHome(){
+                    document.querySelector(".block").style.display="none"
+                }
+                document.querySelector(".block>button:nth-child(9)").addEventListener("click",creatAoc_1)
+                document.querySelector(".fillupForm>button:nth-child(2)").addEventListener("click",singInFunc_2)
+
+buttonStyle()
+function buttonStyle(){
+document.querySelector(".fillupForm>button:nth-child(2)").style.background="#4b5666"
+    // document.querySelector(".fillupForm>button:nth-child(2)").style.hover="red"
+    document.querySelector(".fillupForm>button:nth-child(2)").addEventListener("mouseenter",()=>
+    document.querySelector(".fillupForm>button:nth-child(2)").style.background="white"
+    )
+    document.querySelector(".fillupForm>button:nth-child(2)").addEventListener("mouseleave",()=>
+    document.querySelector(".fillupForm>button:nth-child(2)").style.background="#4b5666"
+    )
+
+
+document.querySelector(".block>button:last-child").style.background="white"
+    // document.querySelector(".fillupForm>button:nth-child(2)").style.hover="red"
+    document.querySelector(".block>button:last-child").addEventListener("mouseenter",()=>
+    document.querySelector(".block>button:last-child").style.background="#4b5666"
+    )
+    document.querySelector(".block>button:last-child").addEventListener("mouseleave",()=>
+    document.querySelector(".block>button:last-child").style.background="white"
+    )
+
+
+    document.querySelector(".fillupForm>button:nth-child(3)").style.background="white"
+    // document.querySelector(".fillupForm>button:nth-child(2)").style.hover="red"
+    document.querySelector(".fillupForm>button:nth-child(3)").addEventListener("mouseenter",()=>
+    document.querySelector(".fillupForm>button:nth-child(3)").style.background="#4b5666"
+    )
+    document.querySelector(".fillupForm>button:nth-child(3)").addEventListener("mouseleave",()=>
+    document.querySelector(".fillupForm>button:nth-child(3)").style.background="white"
+    )
+
+}
+
+
+
+            }
+        }
+        }
+        
+    }
+    document.querySelector(".block>button:nth-child(9)").addEventListener("click",creatAoc_1)
+   function creatAoc_1() {
+        place.innerHTML=cAform1()
+
+        document.querySelector(".material-symbols-outlined").addEventListener("click",rettrnHome)
+        function rettrnHome(){
+            document.querySelector(".block").style.display="none"
+        }
+
+        buttonStyle()
+function buttonStyle(){
+document.querySelector(".fillupForm>button:nth-child(6)").style.background="#4b5666"
+    // document.querySelector(".fillupForm>button:nth-child(2)").style.hover="red"
+    document.querySelector(".fillupForm>button:nth-child(6)").addEventListener("mouseenter",()=>
+    document.querySelector(".fillupForm>button:nth-child(6)").style.background="white"
+    )
+    document.querySelector(".fillupForm>button:nth-child(6)").addEventListener("mouseleave",()=>
+    document.querySelector(".fillupForm>button:nth-child(6)").style.background="#4b5666"
+    ) 
+
+    document.querySelector(".block>button:last-child").style.background="white"
+    // document.querySelector(".fillupForm>button:nth-child(2)").style.hover="red"
+    document.querySelector(".block>button:last-child").addEventListener("mouseenter",()=>
+    document.querySelector(".block>button:last-child").style.background="#4b5666"
+    )
+    document.querySelector(".block>button:last-child").addEventListener("mouseleave",()=>
+    document.querySelector(".block>button:last-child").style.background="white"
+    )
+}
+
+    document.querySelector(".fillupForm>button:nth-child(6)").addEventListener("click",creatAoc_2)
+function creatAoc_2(){
+let newuser=true
+let emailData=document.querySelector(".cAform1_email").value 
+let mobilData=document.querySelector(".cAform1_number").value 
+createdAccountData.forEach(function(el){
+    console.log(el)
+    if(el.email==emailData){
+        newuser=false
+        document.querySelector(".block>button:nth-child(10)").addEventListener("click",userauthentcation)
+    }
+
+}) 
+if(newuser==false){
+    document.querySelector(".fillupForm>p:nth-child(1)").innerText="Email already ragistered plz Sing In"
+        document.querySelector(".fillupForm>p:nth-child(1)").style.color="red"
+}
+else{
+
+    place.innerHTML=cAform2()
+    document.querySelector(".material-symbols-outlined").addEventListener("click",rettrnHome)
+function rettrnHome(){
+document.querySelector(".block").style.display="none"
+}
+
+    buttonStyle()
+function buttonStyle(){
+document.querySelector(".fillupForm>button:nth-child(3)").style.background="#4b5666"
+    // document.querySelector(".fillupForm>button:nth-child(2)").style.hover="red"
+    document.querySelector(".fillupForm>button:nth-child(3)").addEventListener("mouseenter",()=>
+    document.querySelector(".fillupForm>button:nth-child(3)").style.background="white"
+    )
+    document.querySelector(".fillupForm>button:nth-child(3)").addEventListener("mouseleave",()=>
+    document.querySelector(".fillupForm>button:nth-child(3)").style.background="#4b5666"
+    )
+
+    document.querySelector(".fillupForm>button:nth-child(4)").style.background="white"
+    // document.querySelector(".fillupForm>button:nth-child(2)").style.hover="red"
+    document.querySelector(".fillupForm>button:nth-child(4)").addEventListener("mouseenter",()=>
+    document.querySelector(".fillupForm>button:nth-child(4)").style.background="#4b5666"
+    )
+    document.querySelector(".fillupForm>button:nth-child(4)").addEventListener("mouseleave",()=>
+    document.querySelector(".fillupForm>button:nth-child(4)").style.background="white"
+    )
+
+}
+
+
+
+
+    document.querySelector(".fillupForm>button:nth-child(3)").addEventListener("click",creatAoc_3)
+
+}
+
+
+
+function creatAoc_3(){
+let otp=document.querySelector(".cAform2_coad").value
+if(otp==acccoad){
+place.innerHTML=cAform3()
+document.querySelector(".material-symbols-outlined").addEventListener("click",rettrnHome)
+function rettrnHome(){
+document.querySelector(".block").style.display="none"
+}
+buttonStyle()
+function buttonStyle(){
+document.querySelector(".fillupForm>button:nth-child(4)").style.background="#4b5666"
+    // document.querySelector(".fillupForm>button:nth-child(2)").style.hover="red"
+    document.querySelector(".fillupForm>button:nth-child(4)").addEventListener("mouseenter",()=>
+    document.querySelector(".fillupForm>button:nth-child(4)").style.background="white"
+    )
+    document.querySelector(".fillupForm>button:nth-child(4)").addEventListener("mouseleave",()=>
+    document.querySelector(".fillupForm>button:nth-child(4)").style.background="#4b5666"
+    )
+}
+
+document.querySelector(".fillupForm>button:nth-child(4)").addEventListener("click",creatAocEnd)
+function creatAocEnd(){
+    let  fastName=document.querySelector(".firstName").value
+   let   lastName=document.querySelector(".lastName").value
+   let   monthName=document.querySelector(".monthName").value
+   let   dates=document.querySelector(".dates").value
+   let   year=document.querySelector(".year").value
+
+    function objcinst(fastName,lastName,monthName,dates,year,emailData,mobilData){
+        this.firstname=fastName
+        this.lastName=lastName
+        this.mounth=monthName
+        this.data=dates
+        this.year=year
+        this.email=emailData
+        this.call=mobilData
+    }
+    let data=new objcinst(fastName,lastName,monthName,dates,year,emailData,mobilData)
+    curruser=[]
+    curruser.push(data)
+    console.log(curruser)
+    createdAccountData.push(data)
+localStorage.setItem("tempuser",JSON.stringify(curruser))
+    localStorage.setItem("createdAccounts",JSON.stringify(createdAccountData))
+
+//    console.log(data)
+   userdata.push("allow")
+                localStorage.setItem("userAuthCode",JSON.stringify(userdata))
+                swaping(userdata)
+                document.querySelector(".block").style.display="none"
+}
+}
+}
+}
+}   
+}
+else{
+    distag.innerText="My Account"
+}
+}
+document.querySelector("#singMyAco").addEventListener("click",userauthentcation)
+function myAccDetails(){
+    
+window.location.href="/Anthropologie-Unit3/sign/myAccount.html"
+}
